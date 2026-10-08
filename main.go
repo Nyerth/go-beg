@@ -10,11 +10,22 @@ func main() {
     // fmt.Println("Hello,", first)
     // fmt.Println("Hello,", second)
 
-    var first, second int
-    fmt.Scan(&first, &second)
+    // var first, second int
+    // fmt.Scan(&first, &second)
 
-    fmt.Println(first + second)
-    fmt.Println(first - second)
-    fmt.Println(first == second)
+    // fmt.Println(first + second)
+    // fmt.Println(first - second)
+    // fmt.Println(first == second)
+
+    var a, b int
+    fmt.Scan(&a, &b)
+
+    
+	quotient := a / b
+	
+	remainder := a % b
+
+    fmt.Println(quotient)
+    fmt.Println(remainder)
 
 }
