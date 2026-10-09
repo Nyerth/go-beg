@@ -59,19 +59,32 @@ func main() {
 	// fmt.Printf("%-12s %3d x %6.2f = %8.2f",name, qty, price, total)
 
 	// Exercise 06
-	var n int
-	fmt.Scan(&n)
+	// var n int
+	// fmt.Scan(&n)
 	
-	switch { 
-		case n % 3 == 0 && n % 5 == 0:
-			fmt.Println("FizzBuzz")
-		case n % 3 == 0:
-			fmt.Println("Fizz")
-		case n % 5 == 0:
-			fmt.Println("Buzz")
-		default:				
-			fmt.Println(n)
-	}
+	// switch { 
+	// 	case n % 3 == 0 && n % 5 == 0:
+	// 		fmt.Println("FizzBuzz")
+	// 	case n % 3 == 0:
+	// 		fmt.Println("Fizz")
+	// 	case n % 5 == 0:
+	// 		fmt.Println("Buzz")
+	// 	default:				
+	// 		fmt.Println(n)
+	// }
 	// fmt.Println(n)
+
+	// Exercise 07
+	var n int
+    fmt.Scan(&n)
+    // TODO: accumulate the sum of 1..n with a loop, and print that instead of the placeholder.
+	if n >= 0 && n <= 100000 {
+		sum := 0
+		for i := 1; i <= n; i++ {
+			sum += i
+		}
+		fmt.Println(sum)
+	}
+
 
 }
