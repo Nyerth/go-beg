@@ -1,14 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
+	
 )
 
 func main() {
+	// Exercise 01
     // var first, second string
     // fmt.Scan(&first)
     // fmt.Scan(&second)
@@ -16,6 +14,7 @@ func main() {
     // fmt.Println("Hello,", first)
     // fmt.Println("Hello,", second)
 
+	// Exercise 02
     // var first, second int
     // fmt.Scan(&first, &second)
 
@@ -23,6 +22,7 @@ func main() {
     // fmt.Println(first - second)
     // fmt.Println(first == second)
 
+	// Exercise 03
     // var a, b int
     // fmt.Scan(&a, &b)
 
@@ -34,6 +34,7 @@ func main() {
     // fmt.Println(quotient)
     // fmt.Println(remainder)
 
+	// Exercise 04
     // r := bufio.NewReader(os.Stdin)
 	// line, _ := r.ReadString('\n')
 	// line = strings.TrimRight(line, "\r\n")
@@ -43,18 +44,34 @@ func main() {
 
 	// fmt.Println(line)
 
+	// Exercise 05
+    // r := bufio.NewReader(os.Stdin)
+	// name, _ := r.ReadString('\n')
+	// name = strings.TrimRight(name, "\r\n")
+	// qtyLine, _ := r.ReadString('\n')
+	// qty, _ := strconv.Atoi(strings.TrimSpace(qtyLine))
+	// priceLine, _ := r.ReadString('\n')
+	// price, _ := strconv.ParseFloat(strings.TrimSpace(priceLine), 64)
+	// total := float64(qty) * price
 
-    r := bufio.NewReader(os.Stdin)
-	name, _ := r.ReadString('\n')
-	name = strings.TrimRight(name, "\r\n")
-	qtyLine, _ := r.ReadString('\n')
-	qty, _ := strconv.Atoi(strings.TrimSpace(qtyLine))
-	priceLine, _ := r.ReadString('\n')
-	price, _ := strconv.ParseFloat(strings.TrimSpace(priceLine), 64)
-	total := float64(qty) * price
+	// // TODO: replace this Println with one fmt.Printf that lays the
+	// // four values out in the receipt columns described in the exercise.
+	// fmt.Printf("%-12s %3d x %6.2f = %8.2f",name, qty, price, total)
 
-	// TODO: replace this Println with one fmt.Printf that lays the
-	// four values out in the receipt columns described in the exercise.
-	fmt.Printf("%-12s %3d x %6.2f = %8.2f",name, qty, price, total)
+	// Exercise 06
+	var n int
+	fmt.Scan(&n)
+	
+	switch { 
+		case n % 3 == 0 && n % 5 == 0:
+			fmt.Println("FizzBuzz")
+		case n % 3 == 0:
+			fmt.Println("Fizz")
+		case n % 5 == 0:
+			fmt.Println("Buzz")
+		default:				
+			fmt.Println(n)
+	}
+	// fmt.Println(n)
 
 }
