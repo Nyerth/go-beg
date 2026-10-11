@@ -4,6 +4,10 @@ import (
 	"fmt"
 	
 )
+// part of Exercise 08
+func square(n int) int {
+	return n * n
+}
 
 func main() {
 	// Exercise 01
@@ -75,16 +79,23 @@ func main() {
 	// fmt.Println(n)
 
 	// Exercise 07
-	var n int
-    fmt.Scan(&n)
+	// var n int
+    // fmt.Scan(&n)
     // TODO: accumulate the sum of 1..n with a loop, and print that instead of the placeholder.
-	if n >= 0 && n <= 100000 {
-		sum := 0
-		for i := 1; i <= n; i++ {
-			sum += i
-		}
-		fmt.Println(sum)
-	}
+	// if n >= 0 && n <= 100000 {
+	// 	sum := 0
+	// 	for i := 1; i <= n; i++ {
+	// 		sum += i
+	// 	}
+	// 	fmt.Println(sum)
+	// }
+
+	// Exercise 08
+	var n int
+	fmt.Scan(&n)
+	fmt.Println(square(n))
+
+
 
 
 }
