@@ -1,13 +1,17 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	
+	"os"
+	"strconv"
+	"strings"
 )
+
 // part of Exercise 08
-func square(n int) int {
-	return n * n
-}
+// func square(n int) int {
+// 	return n * n
+// }
 
 func main() {
 	// Exercise 01
@@ -91,11 +95,32 @@ func main() {
 	// }
 
 	// Exercise 08
-	var n int
-	fmt.Scan(&n)
-	fmt.Println(square(n))
+	// var n int
+	// fmt.Scan(&n)
+	// fmt.Println(square(n))
 
 
+	// Exercise 09
+		r := bufio.NewReader(os.Stdin)
+	line, _ := r.ReadString('\n')
+	line = strings.TrimRight(line, "\r\n")
+
+	// TODO: parse `line` with strconv.Atoi, which hands back two values:
+	// the number it read and an error. Work out which of the two tells you
+	// whether the parse actually worked, then print the success line or the
+	// failure word the task asks for. Replace the placeholder below.
+	parser(line)
+	
 
 
+}
+func parser(line string) (int, error) {
+		num, err := strconv.Atoi(line)
+		if err != nil {
+			fmt.Println("bad")
+			return 0, err
+		}
+
+		res, err := fmt.Printf("ok %d", num)
+		return res, err
 }
