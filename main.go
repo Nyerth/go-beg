@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strconv"
+	// "strconv"
 	"strings"
-	"slices"
+	// "slices"
 )
 
 // part of Exercise 08
@@ -117,25 +117,50 @@ func main() {
 		// bufio.NewReader wraps os.Stdin so it can be read a piece at a time, and
 	// ReadString('\n') hands back everything up to and including the first
 	// newline: one line of input.
-	r := bufio.NewReader(os.Stdin)
+	// r := bufio.NewReader(os.Stdin)
+	// line, _ := r.ReadString('\n')
+	// parts := strings.Fields(strings.TrimSpace(line))
+	// nums := make([]int, 0, len(parts))
+	// for _, p := range parts {
+	// 	n, _ := strconv.Atoi(p)
+	// 	nums = append(nums, n)
+	// }
+
+	// max := 0
+	// for _, num := range nums{
+	// 	if num == slices.Max(nums){
+	// 		max = num
+	// 	}
+	// }
+	// // TODO: scan nums for the largest value and print it in place of this placeholder.
+	// fmt.Println(max)
+
+	// Exercise 11
+
+		r := bufio.NewReader(os.Stdin)
 	line, _ := r.ReadString('\n')
-	parts := strings.Fields(strings.TrimSpace(line))
-	nums := make([]int, 0, len(parts))
-	for _, p := range parts {
-		n, _ := strconv.Atoi(p)
-		nums = append(nums, n)
+	words := strings.Fields(strings.TrimSpace(line))
+	counts := make(map[string]int)
+
+	// TODO: put every word of words into counts, then set these two numbers.
+	
+	once := 0
+	_ = words
+	_ = counts
+
+	for _, word := range(words){
+		counts[word]++
 	}
 
-	max := 0
-	for _, num := range nums{
-		if num == slices.Max(nums){
-			max = num
+	different := len(counts)
+
+	for _, count := range(counts){
+		if count == 1{
+			once++
 		}
 	}
-	// TODO: scan nums for the largest value and print it in place of this placeholder.
-	fmt.Println(max)
-
-
+	fmt.Println(different)
+	fmt.Println(once)
 
 
 }
