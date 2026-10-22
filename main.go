@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"slices"
 )
 
 // part of Exercise 08
@@ -101,26 +102,52 @@ func main() {
 
 
 	// Exercise 09
-		r := bufio.NewReader(os.Stdin)
-	line, _ := r.ReadString('\n')
-	line = strings.TrimRight(line, "\r\n")
+	// 	r := bufio.NewReader(os.Stdin)
+	// line, _ := r.ReadString('\n')
+	// line = strings.TrimRight(line, "\r\n")
 
 	// TODO: parse `line` with strconv.Atoi, which hands back two values:
 	// the number it read and an error. Work out which of the two tells you
 	// whether the parse actually worked, then print the success line or the
 	// failure word the task asks for. Replace the placeholder below.
-	parser(line)
+	// parser(line)
 	
+	// Exercise 10
 
+		// bufio.NewReader wraps os.Stdin so it can be read a piece at a time, and
+	// ReadString('\n') hands back everything up to and including the first
+	// newline: one line of input.
+	r := bufio.NewReader(os.Stdin)
+	line, _ := r.ReadString('\n')
+	parts := strings.Fields(strings.TrimSpace(line))
+	nums := make([]int, 0, len(parts))
+	for _, p := range parts {
+		n, _ := strconv.Atoi(p)
+		nums = append(nums, n)
+	}
 
-}
-func parser(line string) (int, error) {
-		num, err := strconv.Atoi(line)
-		if err != nil {
-			fmt.Println("bad")
-			return 0, err
+	max := 0
+	for _, num := range nums{
+		if num == slices.Max(nums){
+			max = num
 		}
+	}
+	// TODO: scan nums for the largest value and print it in place of this placeholder.
+	fmt.Println(max)
 
-		res, err := fmt.Printf("ok %d", num)
-		return res, err
+
+
+
 }
+
+// Part of Exercise 09
+// func parser(line string) (int, error) {
+// 		num, err := strconv.Atoi(line)
+// 		if err != nil {
+// 			fmt.Println("bad")
+// 			return 0, err
+// 		}
+
+// 		res, err := fmt.Printf("ok %d", num)
+// 		return res, err
+// }
